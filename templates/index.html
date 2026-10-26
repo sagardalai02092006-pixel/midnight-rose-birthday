@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}A little website, a big feeling{% endblock %}
+{% block content %}
+<section class="hero shell">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="eyebrow-dot"></span> A LITTLE WEBSITE, A BIG FEELING</div>
+    <h1>Make their birthday<br>feel like <em>magic.</em></h1>
+    <p class="hero-text">Turn your favorite photos, your words, and one little surprise into a birthday page made just for them.</p>
+    <div class="hero-actions"><a class="button button-primary" href="{{ url_for('create') }}">Create their surprise <span>↗</span></a><a class="text-link" href="#how-it-works">See how it works <span>↓</span></a></div>
+    <div class="hero-proof"><div class="avatar-stack"><span>♡</span><span>✿</span><span>✦</span></div><span>A tiny corner of the internet, just for them.</span></div>
+  </div>
+  <div class="hero-art" aria-label="Preview of a birthday surprise page">
+    <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="spark spark-one">✦</div><div class="spark spark-two">✧</div>
+    <div class="preview-card">
+      <div class="preview-top"><span>FOR SOMEONE SPECIAL</span><span>♡</span></div>
+      <div class="preview-photo"><div class="photo-glow"></div><div class="photo-silhouette"><span>♡</span></div><span class="photo-label">your favorite memory</span></div>
+      <div class="preview-note"><span class="tiny-label">A NOTE FROM THE HEART</span><h2>To my favorite<br><em>human.</em></h2><p>Some people make ordinary days feel extraordinary. You're one of them.</p><div class="preview-signature">with all my love <span>♡</span></div></div>
+      <div class="preview-sticker">open<br>me <span>↘</span></div>
+    </div>
+    <div class="floating-note note-left"><span class="note-icon">✧</span><span>made with love</span></div><div class="floating-note note-right"><span class="note-icon">♡</span><span>just for you</span></div>
+  </div>
+</section>
+<section class="feature-strip shell"><div><span class="feature-icon">▧</span><span><b>Your photos</b><small>Memories in one place</small></span></div><div><span class="feature-icon">✉</span><span><b>Your words</b><small>A letter from the heart</small></span></div><div><span class="feature-icon">✧</span><span><b>The big reveal</b><small>A surprise worth opening</small></span></div></section>
+<section class="how-section shell" id="how-it-works"><div class="section-heading"><span class="eyebrow">THOUGHTFUL, NOT COMPLICATED</span><h2>Three little steps.<br><em>One unforgettable</em> feeling.</h2></div><div class="steps-grid"><article class="step-card"><span class="step-number">01</span><div class="step-illustration upload-ill">▧<span>＋</span></div><h3>Add your memories</h3><p>Upload favorite photos, add their name, and write the message you want them to keep.</p></article><article class="step-card"><span class="step-number">02</span><div class="step-illustration letter-ill">✉<span>♡</span></div><h3>Make it feel like them</h3><p>Choose a mood, add a song link, and personalize every little detail.</p></article><article class="step-card"><span class="step-number">03</span><div class="step-illustration gift-ill">▱<span>✦</span></div><h3>Share the surprise</h3><p>Send a private page link. They tap to reveal your message and celebrate.</p></article></div></section>
+<section class="cta-band shell"><div><span class="eyebrow">THEY'RE GOING TO LOVE THIS</span><h2>Give them a moment<br>they can <em>come back to.</em></h2></div><a class="button button-light" href="{{ url_for('create') }}">Make their birthday page <span>↗</span></a></section>
+{% endblock %}

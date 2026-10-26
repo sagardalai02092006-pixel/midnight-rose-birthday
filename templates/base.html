@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#180b17">
+  <meta name="description" content="Make a personal birthday surprise page with photos, a letter, and a magical reveal.">
+  <title>{% block title %}Midnight Rose{% endblock %} · Birthday Moments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="site-header">
+    <a class="brand" href="{{ url_for('index') }}"><span class="brand-mark">✦</span><span>little<span class="brand-script">moments</span></span></a>
+    <a class="header-link" href="{{ url_for('create') }}">Create a wish <span aria-hidden="true">↗</span></a>
+  </header>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}<div class="flash-wrap">{% for category, message in messages %}<div class="flash {{ category }}" role="alert">{{ message }}</div>{% endfor %}</div>{% endif %}
+  {% endwith %}
+  <main>{% block content %}{% endblock %}</main>
+  <footer class="site-footer"><span>Made with a little love ✦</span><span>Every person deserves a moment that feels like theirs.</span></footer>
+  <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
